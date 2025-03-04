@@ -1,0 +1,22 @@
+class Solution {
+    int missingNumber(int arr[]) {
+        // code here
+        int lengthOfArray = arr.length+2;
+        int [] frequencyArray = new int[lengthOfArray];
+    
+        for(int element : arr)
+        {
+            frequencyArray[element]=1;
+        }
+        
+        for(int i=1; i<lengthOfArray ;i++)
+        {
+            if(frequencyArray[i]==0)
+            {
+                return i;
+            }
+        }
+        return 0;
+        
+    }
+}
