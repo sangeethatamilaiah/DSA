@@ -1,0 +1,20 @@
+class Solution {
+    static ArrayList<Integer> leaders(int arr[]) {
+        // code here
+        ArrayList<Integer> leader = new ArrayList<Integer>();        
+        int max= arr[arr.length-1];
+        leader.add(max);
+        int start = arr.length-2;
+        for(int i=start ;i>=0;i--)
+        {
+           
+            if(arr[i]>=max)
+            {
+                max=arr[i];
+                leader.add(max);
+            }
+        }
+        Collections.reverse(leader);
+        return leader;
+    }
+}
